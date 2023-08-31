@@ -25,11 +25,12 @@
             app:srcCompat="@drawable/logo_mt" />
 
         <EditText
+            android:id="@+id/edit_email"
             style="@style/Edit_Text"
             android:layout_width="264dp"
             android:layout_height="59dp"
-            android:hint="E-mail"
             android:fontFamily="@font/inter_black"
+            android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +41,7 @@
             app:layout_constraintVertical_bias="0.443" />
 
         <EditText
-            android:id="@+id/Senha"
+            android:id="@+id/edit_senha"
             style="@style/Edit_Text"
             android:layout_width="264dp"
             android:layout_height="59dp"
@@ -68,14 +69,14 @@
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
         <Button
-            android:id="@+id/b_entrar"
+            android:id="@+id/bt_entrar"
             style="@style/Button"
             android:text="Entrar"
             android:fontFamily="@font/inter_black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Senha" />
+            app:layout_constraintTop_toBottomOf="@id/edit_senha" />
 
         <Button
             android:id="@+id/text_tela_cadastro"
@@ -85,7 +86,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/b_entrar" />
+            app:layout_constraintTop_toBottomOf="@id/bt_entrar" />
 
         <ProgressBar
             android:id="@+id/progressbar"
