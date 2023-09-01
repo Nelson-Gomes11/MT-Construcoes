@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,12 +55,12 @@ public class Login extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 }else {
-                    AutenticarUsuario();
+                    AutenticarUsuario(v);
                 }
             }
         });
     }
-    private void AutenticarUsuario(){
+    private void AutenticarUsuario(View view){
 
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
@@ -68,8 +69,38 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
+                if (task.isSuccessful()){
+                    progressBar.setVisibility(View.VISIBLE);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            TelaPrincipal();
+                        }
+                    }, 2000);
+                }else {
+                    String erro;
+
+                    try {
+                        throw task.getException();
+                    }catch (Exception e){
+                        erro = "Erro ao logar usuário";
+                    }
+                    Snackbar snackbar = Snackbar.make(view,erro, Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }
             }
         });
+    }
+
+    private void TelaPrincipal(){
+        Intent intent = new Intent(Login.this,TelaPrincipal.class);
+        startActivity(intent);
+        finish();
+
     }
     private void IniciarComponentes(){
         text_tela_cadastro = findViewById(R.id.text_tela_cadastro);
