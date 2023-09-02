@@ -6,6 +6,8 @@
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
     </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
 
     <style name="Edit_Text">
         <item name="android:layout_width">match_parent</item>
