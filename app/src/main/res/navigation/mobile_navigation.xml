@@ -22,4 +22,8 @@
         android:name="br.com.mt.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_contato"
+        android:name=""
+
 </navigation>
