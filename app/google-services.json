@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "70587283964",
+    "project_id": "mtconstrucoes-2360d",
+    "storage_bucket": "mtconstrucoes-2360d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70587283964:android:7240e223073df6feaf9a79",
+        "android_client_info": {
+          "package_name": "br.com.mt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70587283964-ail0l48ji0i5nsgv1qp6cmf0ahq7sd51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQnNEdAiUn_VLG0rLikfwN0QcP6S5tqWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70587283964-ail0l48ji0i5nsgv1qp6cmf0ahq7sd51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
