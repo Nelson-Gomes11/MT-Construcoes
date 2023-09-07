@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_contato"
-        android:name=""
+        android:name="br.com.mt.ui.contato.ContatoFragment"
         android:label="Contato"/>
 
 </navigation>

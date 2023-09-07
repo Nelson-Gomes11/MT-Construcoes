@@ -1,10 +1,14 @@
 <resources>
-    <string name="app_name">MT</string>
+    <string name="app_name">MT Construções</string>
     <string name="title_activity_tela_principal">TelaPrincipal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="tela_principal">Perfil</string>
+    <string name="nav_header_tela_principal">MT CONSTRUÇÕES</string>
+    <string name="nav_2">nelsongomesdasilva1125@gmail.com</string>
 
     <string name="menu_home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
