@@ -4,6 +4,12 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_perfil"
+            android:title="@string/tela_principal"
+            />
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu"
@@ -11,6 +17,6 @@
         <item
             android:id="@+id/nav_contato"
             android:icon="@drawable/ic_contact"
-            android:title="Contato" />
+            android:title="@string/contato" />
     </group>
 </menu>
