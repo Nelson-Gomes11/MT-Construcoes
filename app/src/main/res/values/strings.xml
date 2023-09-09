@@ -8,8 +8,7 @@
     <string name="contato">Contato</string>
     <string name="nav_header_tela_principal">MT CONSTRUÇÕES</string>
     <string name="nav_2">nelsongomesdasilva1125@gmail.com</string>
-
+    <string name="nav_search">Pesquise seu item aqui!</string>
     <string name="menu_home">Home</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
