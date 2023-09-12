@@ -48,11 +48,13 @@ dependencies {
     implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
     implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10")
     testImplementation("junit:junit:4.13.2")
-    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation ("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-auth")
     implementation ("com.google.firebase:firebase-firestore")
     implementation ("androidx.biometric:biometric:1.1.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
+    implementation ("com.makeramen:roundedimageview:2.3.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 
 }
