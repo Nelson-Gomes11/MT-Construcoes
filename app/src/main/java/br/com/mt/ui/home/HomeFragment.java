@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +22,6 @@ import java.util.List;
 
 import br.com.mt.R;
 import br.com.mt.adapters.MaisAdapters;
-import br.com.mt.databinding.FragmentHomeBinding;
 import br.com.mt.models.MaisVend;
 
 public class HomeFragment extends Fragment {
@@ -37,6 +34,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        db = FirebaseFirestore.getInstance();
 
         maisVend = root.findViewById(R.id.pop_rec);
 
@@ -51,19 +49,17 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult())
+                            for (QueryDocumentSnapshot document : task.getResult()) {
 
-                                MaisVend maisVend1 = document.toObject(MaisVend.class);
+                                MaisVend maisVend = document.toObject(MaisVend.class);
                                 maisVendList.add(maisVend);
                                 maisAdapters.notifyDataSetChanged();
+                            }
+                        } else {
+                            Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
                         }
-                    } else {
-
-                        ClassNotFoundException task = null;
-                        Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
         return root;
     }
 }
