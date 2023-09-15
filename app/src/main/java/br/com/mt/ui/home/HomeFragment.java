@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         maisAdapters = new MaisAdapters(getActivity(),maisVendList);
         maisVend.setAdapter(maisAdapters);
 
-        db.collection("HomeCategory")
+        db.collection("MaisVendidos")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
         homeAdapter = new HomeAdapter(getActivity(),categoryList);
         homeCatRec.setAdapter(homeAdapter);
 
-        db.collection("MaisVendidos")
+        db.collection("HomeCategory")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
 
                                 HomeCategory homeCategory = document.toObject(HomeCategory.class);
                                 categoryList.add(homeCategory);
-                                maisAdapters.notifyDataSetChanged();
+                                homeAdapter.notifyDataSetChanged();
                             }
                         } else {
                             Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();

@@ -43,6 +43,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+
         return categoryList.size();
     }
 
@@ -53,7 +54,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             catImg = itemView.findViewById(R.id.home_cat_img);
-            catImg = itemView.findViewById(R.id.cat_home_name);
+            name = itemView.findViewById(R.id.cat_home_name);
         }
     }
 }
