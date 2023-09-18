@@ -23,12 +23,14 @@ import java.util.List;
 import br.com.mt.R;
 import br.com.mt.adapters.HomeAdapter;
 import br.com.mt.adapters.MaisAdapters;
+import br.com.mt.adapters.PromoAdapter;
 import br.com.mt.models.HomeCategory;
 import br.com.mt.models.MaisVend;
+import br.com.mt.models.PromoModel;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView maisVend,homeCatRec;
+    RecyclerView maisVend,homeCatRec,promoRec;
     FirebaseFirestore db;
 
     //mais vendidos
@@ -38,6 +40,11 @@ public class HomeFragment extends Fragment {
     //categoria
     List<HomeCategory> categoryList;
     HomeAdapter homeAdapter;
+
+    //Promoção
+    List<PromoModel> promoModelList;
+    PromoAdapter promoAdapter;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -46,6 +53,7 @@ public class HomeFragment extends Fragment {
 
         maisVend = root.findViewById(R.id.pop_rec);
         homeCatRec = root.findViewById(R.id.pop_rec_outros);
+        promoRec = root.findViewById(R.id.pop_rec_promo);
 
         //mais vendidos
         maisVend.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
@@ -93,6 +101,31 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+        //Promoção
+        promoRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+        promoModelList = new ArrayList<>();
+        promoAdapter = new PromoAdapter(getActivity(),promoModelList);
+        promoRec.setAdapter(promoAdapter);
+
+        db.collection("EmPromocao")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                PromoModel promoModel = document.toObject(PromoModel.class);
+                                promoModelList.add(promoModel);
+                                promoAdapter.notifyDataSetChanged();
+                            }
+                        } else {
+                            Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
         return root;
     }
 }

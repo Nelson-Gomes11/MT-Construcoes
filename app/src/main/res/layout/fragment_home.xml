@@ -138,8 +138,6 @@
             android:layout_margin="5dp"
             android:id="@+id/pop_rec_promo" />
 
-
-
     </LinearLayout>
 
 </ScrollView>
