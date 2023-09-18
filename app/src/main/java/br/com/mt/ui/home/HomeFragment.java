@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +32,8 @@ import br.com.mt.models.PromoModel;
 
 public class HomeFragment extends Fragment {
 
+    ScrollView scrollView;
+    ProgressBar progressBar;
     RecyclerView maisVend,homeCatRec,promoRec;
     FirebaseFirestore db;
 
@@ -54,6 +58,11 @@ public class HomeFragment extends Fragment {
         maisVend = root.findViewById(R.id.pop_rec);
         homeCatRec = root.findViewById(R.id.pop_rec_outros);
         promoRec = root.findViewById(R.id.pop_rec_promo);
+        scrollView = root.findViewById(R.id.scroll);
+        progressBar = root.findViewById(R.id.progressbar1);
+
+        progressBar.setVisibility(View.VISIBLE);
+        scrollView.setVisibility(View.GONE);
 
         //mais vendidos
         maisVend.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
@@ -72,6 +81,9 @@ public class HomeFragment extends Fragment {
                                 MaisVend maisVend = document.toObject(MaisVend.class);
                                 maisVendList.add(maisVend);
                                 maisAdapters.notifyDataSetChanged();
+
+                                progressBar.setVisibility(View.GONE);
+                                scrollView.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
