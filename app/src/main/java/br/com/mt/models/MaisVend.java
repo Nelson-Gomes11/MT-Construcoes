@@ -7,7 +7,7 @@ public class MaisVend {
 
     public MaisVend() {
     }
-    public MaisVend(String name, String descriptions, String img_url) {
+    public MaisVend(String name, String descriptions, String img_url, int price) {
         this.name = name;
         this.descriptions = descriptions;
         this.img_url = img_url;

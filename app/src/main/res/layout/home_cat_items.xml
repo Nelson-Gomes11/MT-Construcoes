@@ -16,8 +16,8 @@
             android:id="@+id/home_cat_img"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/lixa" />
+            android:layout_marginTop="15dp"
+            android:src="@drawable/conex"/>
         <TextView
             android:id="@+id/cat_home_name"
             android:layout_width="65dp"
