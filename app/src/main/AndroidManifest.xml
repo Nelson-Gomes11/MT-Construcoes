@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.perfil.PerfilFragment"
             android:exported="false" />
 
         <meta-data

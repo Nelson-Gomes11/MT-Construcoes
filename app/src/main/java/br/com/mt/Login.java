@@ -115,7 +115,7 @@ public class Login extends AppCompatActivity {
     }
     private void IniciarComponentes(){
         text_tela_cadastro = findViewById(R.id.text_tela_cadastro);
-        edit_email = findViewById(R.id.edit_email);
+        edit_email = findViewById(R.id.text_email);
         edit_senha = findViewById(R.id.edit_senha);
         bt_entrar = findViewById(R.id.bt_entrar);
         progressBar = findViewById(R.id.progressbar);

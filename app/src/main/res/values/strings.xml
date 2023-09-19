@@ -11,4 +11,7 @@
     <string name="nav_search">Pesquise seu item aqui!</string>
     <string name="menu_home">Home</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="informacoes_de_contato">Contato da empresa:</string>
+    <string name="Email">Email:Nelsongomesdasilva1125@gmail.com</string>
+    <string name="Telefone">Telefone: (82)98839-1549</string>
 </resources>
