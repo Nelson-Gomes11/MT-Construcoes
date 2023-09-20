@@ -27,7 +27,6 @@
             android:textColor="@color/black"
             android:textAlignment="center"
             android:fontFamily="@font/alice"/>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
