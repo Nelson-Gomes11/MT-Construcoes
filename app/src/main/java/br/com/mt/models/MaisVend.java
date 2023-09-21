@@ -4,13 +4,15 @@ public class MaisVend {
     String name;
     String descriptions;
     String img_url;
+    String type;
 
     public MaisVend() {
     }
-    public MaisVend(String name, String descriptions, String img_url, int price) {
+    public MaisVend(String name, String type, String descriptions, String img_url, int price) {
         this.name = name;
         this.descriptions = descriptions;
         this.img_url = img_url;
+        this.type = type;
     }
     public String getName() {
         return name;
