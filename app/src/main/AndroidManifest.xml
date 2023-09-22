@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MT"
         tools:targetApi="31">
         <activity
-            android:name=".adapters.ViewActivity"
+            android:name=".ViewActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

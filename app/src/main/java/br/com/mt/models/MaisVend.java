@@ -37,4 +37,8 @@ public class MaisVend {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
+
+    public String getType() { return type; }
+
+    public void setType(String type) {this.type = type;}
 }

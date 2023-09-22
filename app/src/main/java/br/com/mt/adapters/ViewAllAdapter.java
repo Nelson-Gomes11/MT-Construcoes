@@ -19,8 +19,8 @@ import br.com.mt.models.ViewAllModel;
 
 public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHolder> {
 
-    Context context;
-    List<ViewAllModel> list;
+    private final Context context;
+    private final List<ViewAllModel> list;
 
     public ViewAllAdapter(Context context, List<ViewAllModel> list) {
         this.context = context;
@@ -30,15 +30,19 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_all_item,parent,false));
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_all_item, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
-        holder.name.setText(list.get(position).getName());
-        holder.description.setText(list.get(position).getDescription());
-        holder.price.setText(list.get(position).getPrice()+"/kg");
+        ViewAllModel item = list.get(position);
+
+        Glide.with(context).load(item.getImg_url()).into(holder.imageView);
+
+        holder.name.setText(item.getName());
+        holder.description.setText(item.getDescription());
+        holder.price.setText(item.getPrice());
     }
 
     @Override
@@ -46,10 +50,10 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView name,description,price;
+        TextView name, description, price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

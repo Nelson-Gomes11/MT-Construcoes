@@ -1,5 +1,6 @@
 package br.com.mt.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class MaisAdapters extends RecyclerView.Adapter<MaisAdapters.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MaisAdapters.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Glide.with(context).load(maisVendList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(maisVendList.get(position).getName());
@@ -44,7 +45,8 @@ public class MaisAdapters extends RecyclerView.Adapter<MaisAdapters.ViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ViewActivity.class);
-                Intent.putExtra("type",maisVendList.get(position).getType());
+                intent.putExtra("type",maisVendList.get(position).getType());
+                context.startActivity(intent);
             }
         });
     }
