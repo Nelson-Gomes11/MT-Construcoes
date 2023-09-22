@@ -71,7 +71,7 @@
                     android:fontFamily="@font/alice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Preço $"
+                    android:text="Preço R$"
                     android:textColor="@color/white"/>
                 <TextView
                     android:id="@+id/view_price"
@@ -80,7 +80,7 @@
                     android:fontFamily="@font/alice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30"
+                    android:text="20"
                     android:textColor="@color/white"/>
             </LinearLayout>
 
