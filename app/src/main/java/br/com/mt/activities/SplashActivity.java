@@ -1,9 +1,11 @@
-package br.com.mt;
+package br.com.mt.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Handler;
 import android.content.Intent;
 import android.os.Bundle;
+
+import br.com.mt.R;
 
 public class SplashActivity extends AppCompatActivity {
 

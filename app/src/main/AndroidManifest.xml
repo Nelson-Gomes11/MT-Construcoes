@@ -13,10 +13,10 @@
         android:theme="@style/Theme.MT"
         tools:targetApi="31">
         <activity
-            android:name=".ViewActivity"
+            android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -26,15 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".activities.TelaPrincipal"
             android:exported="false"
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/Theme.MT.NoActionBar" />
         <activity
-            android:name=".Formcadastro"
+            android:name=".activities.Formcadastro"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".activities.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

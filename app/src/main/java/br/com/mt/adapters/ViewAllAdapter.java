@@ -19,8 +19,8 @@ import br.com.mt.models.ViewAllModel;
 
 public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHolder> {
 
-    private final Context context;
-    private final List<ViewAllModel> list;
+    Context context;
+    List<ViewAllModel> list;
 
     public ViewAllAdapter(Context context, List<ViewAllModel> list) {
         this.context = context;
@@ -30,19 +30,16 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_all_item, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_all_item,parent,false));
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ViewAllModel item = list.get(position);
-
-        Glide.with(context).load(item.getImg_url()).into(holder.imageView);
-
-        holder.name.setText(item.getName());
-        holder.description.setText(item.getDescription());
-        holder.price.setText(item.getPrice());
+        Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
+        holder.name.setText(list.get(position).getName());
+        holder.description.setText(list.get(position).getDescription());
+        holder.price.setText(list.get(position).getPrice());
     }
 
     @Override
@@ -50,17 +47,17 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         return list.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView name, description, price;
+        TextView name,description,price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.view_img);
             name = itemView.findViewById(R.id.view_name);
-            description = itemView.findViewById(R.id.view_desc);
+            description = itemView.findViewById(R.id.view_description);
             price = itemView.findViewById(R.id.view_price);
         }
     }

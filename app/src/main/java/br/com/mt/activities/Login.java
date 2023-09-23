@@ -1,4 +1,4 @@
-package br.com.mt;
+package br.com.mt.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import br.com.mt.R;
 
 public class Login extends AppCompatActivity {
 
@@ -108,7 +110,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void TelaPrincipal(){
-        Intent intent = new Intent(Login.this,TelaPrincipal.class);
+        Intent intent = new Intent(Login.this, TelaPrincipal.class);
         startActivity(intent);
         finish();
 

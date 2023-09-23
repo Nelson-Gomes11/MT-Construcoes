@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import com.bumptech.glide.Glide;
 import br.com.mt.R;
-import br.com.mt.ViewActivity;
+import br.com.mt.activities.ViewAllActivity;
 import br.com.mt.models.MaisVend;
 
 public class MaisAdapters extends RecyclerView.Adapter<MaisAdapters.ViewHolder> {
@@ -44,7 +44,7 @@ public class MaisAdapters extends RecyclerView.Adapter<MaisAdapters.ViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ViewActivity.class);
+                Intent intent = new Intent(context, ViewAllActivity.class);
                 intent.putExtra("type",maisVendList.get(position).getType());
                 context.startActivity(intent);
             }

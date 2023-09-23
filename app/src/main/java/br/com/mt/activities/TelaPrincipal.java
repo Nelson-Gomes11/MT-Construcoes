@@ -1,7 +1,6 @@
-package br.com.mt;
+package br.com.mt.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -13,6 +12,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.mt.R;
 import br.com.mt.databinding.ActivityTelaPrincipalBinding;
 
 public class TelaPrincipal extends AppCompatActivity {
