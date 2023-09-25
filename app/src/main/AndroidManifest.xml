@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MT"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ShowAllActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity

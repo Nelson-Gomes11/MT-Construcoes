@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import com.bumptech.glide.Glide;
 import br.com.mt.R;
-import br.com.mt.activities.ViewAllActivity;
 import br.com.mt.models.MaisVend;
 
 public class MaisAdapters extends RecyclerView.Adapter<MaisAdapters.ViewHolder> {
