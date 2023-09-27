@@ -18,5 +18,9 @@
             android:id="@+id/nav_contato"
             android:icon="@drawable/ic_contact"
             android:title="@string/contato" />
+        <item
+            android:id="@+id/nav_carrinho"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="Carrinho"/>
     </group>
 </menu>

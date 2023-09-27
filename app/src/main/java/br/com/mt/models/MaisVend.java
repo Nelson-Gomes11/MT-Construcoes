@@ -5,6 +5,7 @@ public class MaisVend {
     String descriptions;
     String img_url;
     String type;
+    int price;
 
     public MaisVend() {
     }
@@ -41,4 +42,12 @@ public class MaisVend {
     public String getType() { return type; }
 
     public void setType(String type) {this.type = type;}
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }

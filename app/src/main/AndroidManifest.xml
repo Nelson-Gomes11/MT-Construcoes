@@ -16,7 +16,10 @@
             android:name=".activities.ShowAllActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ViewAllActivity"
+            android:name=".activities.DetalheActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CarrinhoActivity"
             android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"

@@ -1,99 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="3dp"
-    android:layout_margin="5dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ShowAllActivity">
 
-    <LinearLayout
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/show_all_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="@color/brown">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Todos os Items"
+        android:background="@color/brown"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        />
 
-        <ImageView
-            android:id="@+id/view_img"
-            android:scaleType="centerInside"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/show_all_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_all_toolbar" />
 
-            <TextView
-
-                android:fontFamily="@font/alice"
-                android:id="@+id/view_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nome"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/view_description"
-                android:fontFamily="@font/alice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Descrição"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:singleLine="false"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/alice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Preço R$"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:id="@+id/view_price"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/alice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20"
-                    android:textColor="@color/white"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                android:layout_gravity="end"
-                android:layout_marginTop="35dp"
-                android:layout_marginRight="5dp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

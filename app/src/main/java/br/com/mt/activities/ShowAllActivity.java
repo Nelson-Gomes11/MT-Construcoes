@@ -1,24 +1,19 @@
 package br.com.mt.activities;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toolbar;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.mt.R;
 import br.com.mt.adapters.ShowAllAdapter;
 import br.com.mt.models.ShowAllModel;
@@ -28,8 +23,6 @@ public class ShowAllActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ShowAllAdapter showAllAdapter;
     List<ShowAllModel> showAllModelList;
-
-    Toolbar toolbar;
     FirebaseFirestore firestore;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,21 +30,10 @@ public class ShowAllActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all);
 
-        toolbar =findViewById(R.id.show_all_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
         String type = getIntent().getStringExtra("type");
 
         firestore = FirebaseFirestore.getInstance();
-        recyclerView = findViewById(id.show_all_rec);
+        recyclerView = findViewById(R.id.show_all_rec);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         showAllModelList = new ArrayList<>();
         showAllAdapter = new ShowAllAdapter(this, showAllModelList);
