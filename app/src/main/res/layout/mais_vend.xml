@@ -16,7 +16,7 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/pop_img"
             android:layout_width="280dp"
-            android:layout_height="190dp"
+            android:layout_height="180dp"
             app:riv_corner_radius="14dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/thinner"/>

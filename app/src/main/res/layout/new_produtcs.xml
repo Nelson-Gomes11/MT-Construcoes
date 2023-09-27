@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
-    android:layout_height="150dp"
     android:layout_margin="5dp"
-    android:padding="5dp"
-    app:cardCornerRadius="5dp"
-    tools:ignore="TextSizeCheck">
+    app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="392dp"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:background="@color/brown"
-        tools:ignore="MissingClass,TextSizeCheck">
+        android:background="@color/brown">
 
         <ImageView
             android:id="@+id/new_img"
@@ -25,8 +21,7 @@
             android:src="@drawable/lixa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="VisualLintBounds" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -66,8 +61,7 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="@+id/new_product_name"
             app:layout_constraintStart_toStartOf="@+id/new_product_name"
-            app:layout_constraintTop_toBottomOf="@+id/new_product_name"
-            tools:ignore="HardcodedText,VisualLintOverlap,VisualLintBounds" />
+            app:layout_constraintTop_toBottomOf="@+id/new_product_name" />
 
         <TextView
             android:id="@+id/new_price"
@@ -81,7 +75,6 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/dollar"
             app:layout_constraintStart_toEndOf="@+id/dollar"
-            app:layout_constraintTop_toTopOf="@+id/dollar"
-            tools:ignore="HardcodedText,MissingConstraints,NotSibling,SmallSp,VisualLintBounds" />
+            app:layout_constraintTop_toTopOf="@+id/dollar"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
