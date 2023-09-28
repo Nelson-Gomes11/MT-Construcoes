@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.Carrinho.CarrinhoFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_cart_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/brown2"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Meu Carrinho"
-        app:titleTextColor="@color/white"/>
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
@@ -34,8 +21,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_cart_toolbar"
-        app:layout_constraintWidth_percent=".9" />
+        app:layout_constraintWidth_percent=".9"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_rec"
