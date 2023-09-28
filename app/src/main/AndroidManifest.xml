@@ -13,13 +13,16 @@
         android:theme="@style/Theme.MT"
         tools:targetApi="31">
         <activity
+            android:name=".activities.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Carrinho.CarrinhoFragment"
+            android:exported="false" />
+        <activity
             android:name=".activities.ShowAllActivity"
             android:exported="false" />
         <activity
             android:name=".activities.DetalheActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.CarrinhoActivity"
             android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"

@@ -73,7 +73,7 @@ public class DetalheActivity extends AppCompatActivity {
         addItems = findViewById(R.id.add_item);
         removeItems = findViewById(R.id.remove_item);
 
-        // Código repetitivo pode ser simplificado
+
         if (newProductsModel != null || maisVend != null || showAllModel != null) {
             if (newProductsModel != null) {
                 Glide.with(getApplicationContext()).load(newProductsModel.getImg_url()).into(detailedImg);
