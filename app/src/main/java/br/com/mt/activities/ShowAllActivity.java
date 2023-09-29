@@ -41,24 +41,23 @@ public class ShowAllActivity extends AppCompatActivity {
 
 
         if (type == null || type.isEmpty()) {
-            // Se type for nulo ou vazio, carregue todos os documentos
             firestore.collection("VerTodos")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
-                                showAllModelList.clear(); // Limpa a lista antes de adicionar novos itens
+                                showAllModelList.clear();
                                 for (DocumentSnapshot doc : task.getResult().getDocuments()) {
                                     ShowAllModel showAllModel = doc.toObject(ShowAllModel.class);
                                     showAllModelList.add(showAllModel);
                                 }
-                                showAllAdapter.notifyDataSetChanged(); // Notifica o adaptador após adicionar todos os itens
+                                showAllAdapter.notifyDataSetChanged(); //
                             }
                         }
                     });
         } else {
-            // Se type for especificado, filtre os documentos com base no valor de 'type'
+
             firestore.collection("VerTodos")
                     .whereEqualTo("type", type)
                     .get()
@@ -66,12 +65,12 @@ public class ShowAllActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
-                                showAllModelList.clear(); // Limpa a lista antes de adicionar novos itens
+                                showAllModelList.clear();
                                 for (DocumentSnapshot doc : task.getResult().getDocuments()) {
                                     ShowAllModel showAllModel = doc.toObject(ShowAllModel.class);
                                     showAllModelList.add(showAllModel);
                                 }
-                                showAllAdapter.notifyDataSetChanged(); // Notifica o adaptador após adicionar todos os itens
+                                showAllAdapter.notifyDataSetChanged();
                             }
                         }
                     });

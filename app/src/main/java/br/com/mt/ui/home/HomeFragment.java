@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
     List<HomeCategory> categoryList;
     HomeAdapter homeAdapter;
 
-    //Promoção
+
     List<PromoModel> promoModelList;
     PromoAdapter promoAdapter;
 
@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
         scrollView.setVisibility(View.GONE);
 
-        //mais vendidos
+
         maisVend.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         maisVendList = new ArrayList<>();
         maisAdapters = new MaisAdapters(getActivity(),maisVendList);
@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
-        //categoria
+
         homeCatRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         categoryList = new ArrayList<>();
         homeAdapter = new HomeAdapter(getActivity(),categoryList);
@@ -113,7 +113,7 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
-        //Promoção
+
         promoRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         promoModelList = new ArrayList<>();
         promoAdapter = new PromoAdapter(getActivity(),promoModelList);

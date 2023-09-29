@@ -1,6 +1,7 @@
 package br.com.mt.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import br.com.mt.R;
+import br.com.mt.activities.ShowAllActivity;
 import br.com.mt.models.HomeCategory;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
@@ -35,20 +37,29 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        int adapterPosition = holder.getAdapterPosition(); // Obtenha a posição do adaptador
 
-        Glide.with(context).load(categoryList.get(position).getImg_url()).into(holder.catImg);
-        holder.name.setText(categoryList.get(position).getName());
+        if (adapterPosition != RecyclerView.NO_POSITION) {
+            Glide.with(context).load(categoryList.get(adapterPosition).getImg_url()).into(holder.catImg);
+            holder.name.setText(categoryList.get(adapterPosition).getName());
 
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, ShowAllActivity.class);
+                    intent.putExtra("type",categoryList.get(adapterPosition).getType());
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-
         return categoryList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView catImg;
         TextView name;
         public ViewHolder(@NonNull View itemView) {
