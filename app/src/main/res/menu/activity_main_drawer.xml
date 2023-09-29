@@ -22,5 +22,9 @@
             android:id="@+id/nav_carrinho"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="Carrinho"/>
+        <item
+            android:id="@+id/nav_novopro"
+
+            android:title="Novos Produtos"/>
     </group>
 </menu>

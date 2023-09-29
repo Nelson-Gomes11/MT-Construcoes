@@ -53,18 +53,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ver_todos_mais"
-                android:fontFamily="@font/alice"
-                android:layout_weight="1"
-                android:text="Ver Todos"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"/>
-
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -91,18 +79,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ver_todos_outros"
-                android:fontFamily="@font/alice"
-                android:layout_weight="1"
-                android:text="Ver Todos"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"/>
-
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -127,18 +103,6 @@
                 android:text="Em Promoção"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ver_todos_promo"
-                android:fontFamily="@font/alice"
-                android:layout_weight="1"
-                android:text="Ver Todos"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16sp"
                 android:textColor="@color/white"/>
 
         </LinearLayout>

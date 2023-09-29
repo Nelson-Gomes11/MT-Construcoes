@@ -75,7 +75,6 @@ public class ShowAllActivity extends AppCompatActivity {
                             }
                         }
                     });
-        }
-
-    }
-}
+            }
+       }
+   }

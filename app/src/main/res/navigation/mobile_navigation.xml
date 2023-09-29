@@ -24,6 +24,6 @@
         android:id="@+id/nav_carrinho"
         android:name="br.com.mt.ui.Carrinho.CarrinhoFragment"
         android:label="Carrinho"
-        tools:layout="@layout/activity_carrinho"/>
-    
+        tools:layout="@layout/fragment_carrinho"/>
+
 </navigation>

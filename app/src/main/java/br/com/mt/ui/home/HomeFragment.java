@@ -81,7 +81,6 @@ public class HomeFragment extends Fragment {
                                 MaisVend maisVend = document.toObject(MaisVend.class);
                                 maisVendList.add(maisVend);
                                 maisAdapters.notifyDataSetChanged();
-
                                 progressBar.setVisibility(View.GONE);
                                 scrollView.setVisibility(View.VISIBLE);
                             }
