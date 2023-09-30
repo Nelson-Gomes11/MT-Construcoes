@@ -1,6 +1,7 @@
 package br.com.mt.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import br.com.mt.R;
+import br.com.mt.activities.ShowAllActivity;
 import br.com.mt.models.PromoModel;
 
 public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.ViewHolder> {
@@ -36,9 +38,21 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
-        holder.name.setText(list.get(position).getName());
-        holder.description.setText(list.get(position).getDescription());
+        Glide.with(context).load(list.get(holder.getAdapterPosition()).getImg_url()).into(holder.imageView);
+        holder.name.setText(list.get(holder.getAdapterPosition()).getName());
+        holder.description.setText(list.get(holder.getAdapterPosition()).getDescription());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int adapterPosition = holder.getAdapterPosition();
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(context, ShowAllActivity.class);
+                    intent.putExtra("type", list.get(adapterPosition).getType());
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

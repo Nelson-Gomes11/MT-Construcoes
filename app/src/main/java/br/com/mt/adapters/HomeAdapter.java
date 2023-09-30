@@ -37,7 +37,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        int adapterPosition = holder.getAdapterPosition(); // Obtenha a posição do adaptador
+        int adapterPosition = holder.getAdapterPosition();
 
         if (adapterPosition != RecyclerView.NO_POSITION) {
             Glide.with(context).load(categoryList.get(adapterPosition).getImg_url()).into(holder.catImg);

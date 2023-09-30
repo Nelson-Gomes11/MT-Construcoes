@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.Carrinho.CarrinhoFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_cart_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/brown"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Meu Carrinho" />
 
     <TextView
         android:id="@+id/textView3"
@@ -27,19 +16,19 @@
         android:fontFamily="@font/alice"
         android:gravity="center"
         android:padding="18dp"
-        android:text="Preço Total : R$40"
-        android:textColor="#BCAAA4"
+        android:text="Preço Total : R$"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_cart_toolbar"
-        app:layout_constraintWidth_percent=".9" />
+        app:layout_constraintWidth_percent=".9"
+        tools:ignore="HardcodedText,MissingConstraints"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_rec"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="450dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"

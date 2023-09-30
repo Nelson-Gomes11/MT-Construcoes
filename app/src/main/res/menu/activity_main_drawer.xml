@@ -21,7 +21,7 @@
         <item
             android:id="@+id/nav_carrinho"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
-            android:title="Carrinho"/>
+            android:title="Meu Carrinho"/>
         <item
             android:id="@+id/nav_novopro"
 
