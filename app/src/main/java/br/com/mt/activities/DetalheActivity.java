@@ -153,7 +153,7 @@ public class DetalheActivity extends AppCompatActivity {
         cartMap.put("currentTime", saveCurrentTime);
         cartMap.put("currentDate", saveCurrentDate);
         cartMap.put("totalQuantity", String.valueOf(totalQuantity));
-        cartMap.put("totalPrice", String.valueOf(totalPrice));
+        cartMap.put("totalPrice", totalPrice);
 
         firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
