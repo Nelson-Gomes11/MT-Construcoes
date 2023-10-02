@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MT Constructions</string>
+    <string name="title_activity_tela_principal">TelaPrincipal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="tela_principal">Profile</string>
+    <string name="contato">Contact</string>
+    <string name="nav_header_tela_principal">MT CONSTRUCTIONS</string>
+    <string name="nav_2">nelsongomesdasilva1125@gmail.com</string>
+    <string name="nav_search">Search for your item here!</string>
+    <string name="menu_home">Home</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="informacoes_de_contato">Company contact:</string>
+    <string name="Email">Email:Nelsongomesdasilva1125@gmail.com</string>
+    <string name="Telefone">Telephone: (82)98839-1549</string>
+</resources>
