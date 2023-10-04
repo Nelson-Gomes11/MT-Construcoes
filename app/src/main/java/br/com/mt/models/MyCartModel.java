@@ -1,6 +1,8 @@
 package br.com.mt.models;
 
-public class MyCartModel {
+import java.io.Serializable;
+
+public class MyCartModel implements Serializable {
 
     String productName;
     String productPrice;

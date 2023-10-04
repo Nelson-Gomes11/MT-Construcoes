@@ -33,6 +33,7 @@
             android:background="@drawable/search_gb"
             android:padding="13dp"
             android:hint="@string/nav_search"
+            android:textColorHint="@color/black"
             android:drawablePadding="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView

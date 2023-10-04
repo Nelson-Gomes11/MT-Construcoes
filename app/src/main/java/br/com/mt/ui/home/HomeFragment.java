@@ -24,6 +24,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import br.com.mt.R;
@@ -87,13 +89,23 @@ public class HomeFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-
                                 MaisVend maisVend = document.toObject(MaisVend.class);
                                 maisVendList.add(maisVend);
-                                maisAdapters.notifyDataSetChanged();
-                                progressBar.setVisibility(View.GONE);
-                                scrollView.setVisibility(View.VISIBLE);
                             }
+
+                            // Ordena a lista de mais vendidos pelo nome usando um Comparator
+                            Collections.sort(maisVendList, new Comparator<MaisVend>() {
+                                @Override
+                                public int compare(MaisVend maisVend1, MaisVend maisVend2) {
+                                    return maisVend1.getName().compareTo(maisVend2.getName());
+                                }
+                            });
+
+                            // Notifica o adaptador sobre as mudanças na lista ordenada
+                            maisAdapters.notifyDataSetChanged();
+
+                            progressBar.setVisibility(View.GONE);
+                            scrollView.setVisibility(View.VISIBLE);
                         } else {
                             Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
                         }
@@ -199,12 +211,51 @@ public class HomeFragment extends Fragment {
                                         showAllModelList.add(showAllModel);
                                         showAllAdapter.notifyDataSetChanged();
                                     }
-                                }
 
+                                }
                             }
                         });
             }
+
+        }
+    private void sortShowAllModels(List<ShowAllModel> list) {
+        mergeSort(list);
+    }
+
+    private void mergeSort(List<ShowAllModel> list) {
+        if (list.size() <= 1) {
+            return;
         }
 
+        int middle = list.size() / 2;
+        List<ShowAllModel> left = list.subList(0, middle);
+        List<ShowAllModel> right = list.subList(middle, list.size());
+
+        mergeSort(left);
+        mergeSort(right);
+
+        merge(list, left, right);
     }
+
+
+    private void merge(List<ShowAllModel> list, List<ShowAllModel> left, List<ShowAllModel> right) {
+        int i = 0, j = 0, k = 0;
+
+        while (i < left.size() && j < right.size()) {
+            if (left.get(i).getName().compareTo(right.get(j).getName()) < 0) {
+                list.set(k++, left.get(i++));
+            } else {
+                list.set(k++, right.get(j++));
+            }
+        }
+
+        while (i < left.size()) {
+            list.set(k++, left.get(i++));
+        }
+
+        while (j < right.size()) {
+            list.set(k++, right.get(j++));
+        }
+    }
+}
 
