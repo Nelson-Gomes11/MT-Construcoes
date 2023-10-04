@@ -95,7 +95,6 @@ public class CarrinhoFragment extends Fragment {
         return root;
     }
 
-
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
