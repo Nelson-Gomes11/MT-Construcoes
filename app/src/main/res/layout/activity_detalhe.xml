@@ -154,30 +154,11 @@
     <Button
         android:id="@+id/add_to_cart"
         android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:padding="14dp"
-        android:text="Adicionar ao Carrinho"
-        android:fontFamily="@font/alice"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buy_now"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buy_now"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837"
-        app:layout_constraintWidth_percent=".8" />
-
-    <Button
-        android:id="@+id/buy_now"
-        android:layout_width="320dp"
         android:backgroundTint="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:padding="14dp"
-        android:text="Compre agora"
+        android:text="@string/addcart"
         android:fontFamily="@font/alice"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -186,7 +167,6 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_to_cart"
         app:layout_constraintWidth_percent=".8"
         tools:ignore="HardcodedText,RtlHardcoded,UnusedAttribute" />
 
