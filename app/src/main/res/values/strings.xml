@@ -16,4 +16,7 @@
     <string name="Telefone">Telefone: (82)98839-1549</string>
     <string name="Obrigado">OBRIGADO POR COMPRAR EM M.T CONSTRUÇÕES!!!!!</string>
     <string name="addcart">Adicionar ao Carrinho</string>
+    <string name="maisvend">Mais Vendidos</string>
+    <string name="Categoria">Categoria</string>
+    <string name="empromo">Em Promoção</string>
 </resources>

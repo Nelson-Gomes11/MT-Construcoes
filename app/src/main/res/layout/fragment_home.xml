@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/alice"
-                android:text="Mais Vendidos"
+                android:text="@string/maisvend"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/alice"
-                android:text="Categoria"
+                android:text="@string/Categoria"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/alice"
-                android:text="Em Promoção"
+                android:text="@string/empromo"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
