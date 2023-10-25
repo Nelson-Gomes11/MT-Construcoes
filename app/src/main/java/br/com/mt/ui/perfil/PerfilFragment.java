@@ -1,24 +1,33 @@
 package br.com.mt.ui.perfil;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-
+import java.util.Objects;
 import br.com.mt.activities.Login;
 import br.com.mt.R;
 
@@ -26,8 +35,11 @@ public class PerfilFragment extends Fragment {
 
     private TextView nomeUsuario, emailUsuario;
     private Button btDeslogar;
+    private ImageView userImage;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
+    private ActivityResultLauncher<Intent> mStartForResult;
+    private FirebaseAuth auth;
 
     @Nullable
     @Override
@@ -37,6 +49,7 @@ public class PerfilFragment extends Fragment {
         nomeUsuario = view.findViewById(R.id.nomedoperfil);
         emailUsuario = view.findViewById(R.id.perfil_email);
         btDeslogar = view.findViewById(R.id.bt_deslogar);
+        userImage = view.findViewById(R.id.userImage);
 
         if (getActivity() != null && getActivity().getActionBar() != null) {
             getActivity().getActionBar().hide();
@@ -54,6 +67,33 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        // Inicializar mStartForResult com registerForActivityResult
+        mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            assert result.getData() != null;
+                            userImage.setImageURI(result.getData().getData());
+                            Log.d("Caminho da imagem", Objects.requireNonNull(result.getData().getData().toString()));
+                            db.collection("Usuarios").document(Objects.requireNonNull(auth.getUid()))
+                                    .update("foto", result.getData().getData()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Log.d("Update", "Sucesso!");
+                                        }
+                                    });
+                        }
+                    }
+                });
+
+
+        userImage.setOnClickListener(v -> {
+            Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+            galleryIntent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            mStartForResult.launch(galleryIntent);
+        });
+
         return view;
     }
 
@@ -68,9 +108,12 @@ public class PerfilFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                if (documentSnapshot != null){
+                if (documentSnapshot != null) {
                     nomeUsuario.setText(documentSnapshot.getString("nome"));
                     emailUsuario.setText(email);
+                    if (documentSnapshot.getString("foto") != null) {
+                        userImage.setImageURI(Uri.parse(documentSnapshot.getString("foto")));
+                    }
                 }
             }
         });

@@ -112,6 +112,7 @@ public class Formcadastro extends AppCompatActivity {
 
         Map<String, Object> usuarios = new HashMap<>();
         usuarios.put("nome", nome);
+        usuarios.put("foto", null);
 
         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
